@@ -3,9 +3,10 @@
 library(car)
 library(shiny)
 
+
 confInv <- function (xbar, s, n, alpha){
 
-    t = abs(qt(alpha,n-1))
+    t = abs(qt(alpha/2,n-1))
     bounds = c(xbar-t*s/sqrt(n), xbar + t*s/sqrt(n))
 #  cat(bounds)
     bounds
