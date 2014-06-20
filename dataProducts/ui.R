@@ -5,7 +5,9 @@ library(shiny)
 
 shinyUI(pageWithSidebar(
   headerPanel("Dynamic Histogram and Confidence Interval"),
+
   sidebarPanel(
+
 
 sliderInput('samplesize','Sample size:',500,min=50, max = 1000, step=5),
  br(), 
@@ -33,8 +35,15 @@ conditionalPanel(
 sliderInput('alpha','Significance Level (alpha) [0.001-0.2]',0.05,min=0.001, max = 0.2,step=0.001),
 
       br(), p("Please keep in mind that"),
-code(" alpha = (1- confidence level (C))/2")
+code(" alpha = (1- confidence level (C))"),
+br(),br(),
+helpText("For help using this webapp, please visit"),
+      a(href="http://junuylia.shinyapps.io/help",
+        "help",target="_blank")
+
 ) ,
+
+    
   mainPanel(
     h3('What is the confidence interval for the population mean?'),
 plotOutput("sampleHist"),
