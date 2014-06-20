@@ -2,7 +2,6 @@
 
 library(car)
 library(shiny)
-library(manipulate)
 
 confInv <- function (xbar, s, n, alpha){
 
